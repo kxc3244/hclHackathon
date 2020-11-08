@@ -1,6 +1,7 @@
 package com.mobileconnect.dto;
 
 import java.util.List;
+import java.util.Set;
 
 import com.mobileconnect.entity.Customer;
 import com.mobileconnect.entity.Document;
@@ -10,7 +11,7 @@ public class ConnectionRequest {
 
 	private Customer customer;
 	private Plan plan;
-	private List<Document> documents;
+	private Set<Document> documents;
 	
 	public ConnectionRequest() {
 		// TODO Auto-generated constructor stub
@@ -32,11 +33,11 @@ public class ConnectionRequest {
 		this.plan = plan;
 	}
 
-	public List<Document> getDocuments() {
+	public Set<Document> getDocuments() {
 		return documents;
 	}
 
-	public void setDocuments(List<Document> documents) {
+	public void setDocuments(Set<Document> documents) {
 		this.documents = documents;
 	}
 
