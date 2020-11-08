@@ -22,8 +22,7 @@ public class ApplicationController {
 	
 	@PostMapping("/requestConnection")
 	public Integer requestConnection(@RequestBody ConnectionRequest connectionRequest ) {
-		applicationService.saveCustomer(connectionRequest.getCustomer());
-		return null;
+		return applicationService.saveConnectionRequest(connectionRequest);
 	}
 
 }
