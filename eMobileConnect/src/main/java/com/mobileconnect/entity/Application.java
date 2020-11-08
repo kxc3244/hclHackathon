@@ -2,9 +2,13 @@ package com.mobileconnect.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 public class Application {
 	
@@ -12,11 +16,15 @@ public class Application {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer applicationId;
 	private Status status;
-	
-	private Integer customerId;
-	private Integer planId;
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id")	
+	private Customer customer;
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id")	
+	private Plan plan;
 	private String comment;
 	private String assignedNumber;
+	@OneToMany(mappedBy = "application", cascade = CascadeType.ALL)
 	private Set<Document> documents;
 
 	public Application() {
@@ -39,20 +47,20 @@ public class Application {
 		this.status = status;
 	}
 
-	public Integer getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
-	public Integer getPlanId() {
-		return planId;
+	public Plan getPlan() {
+		return plan;
 	}
 
-	public void setPlanId(Integer planId) {
-		this.planId = planId;
+	public void setPlan(Plan plan) {
+		this.plan = plan;
 	}
 
 	public String getComment() {
