@@ -15,7 +15,9 @@ public class Customer {
 	private Integer id;
 	@NotNull
 	private String name;
+	@NotNull
 	private String contact;
+	@NotNull
 	private String email;
 	private String address;
 	
