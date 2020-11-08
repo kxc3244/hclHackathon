@@ -19,6 +19,7 @@ public class Customer {
 	private String contact;
 	@NotNull
 	private String email;
+	
 	private String address;
 	
 	public Customer() {
