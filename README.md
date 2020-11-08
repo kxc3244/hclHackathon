@@ -1,6 +1,6 @@
 # hclHackathon
 
-table for customer
+	table for customer
 	Object for Customer
 	Plan entity
 	Application Entity
