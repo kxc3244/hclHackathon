@@ -25,8 +25,7 @@ public class ApplicationService {
 		application.setCustomer(connectionRequst.getCustomer());
 		application.setPlan(connectionRequst.getPlan());
 		application.setDocuments(connectionRequst.getDocuments());
-		applicationRepository.save(application);
-		return null;
+		return applicationRepository.save(application).getApplicationId();
 	}
 
 }
