@@ -3,6 +3,7 @@ package com.mobileconnect.entity;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+@Entity
 public class Application {
 	
 	@Id
@@ -24,7 +26,7 @@ public class Application {
 	private Plan plan;
 	private String comment;
 	private String assignedNumber;
-	@OneToMany(mappedBy = "application", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "Document", cascade = CascadeType.ALL)
 	private Set<Document> documents;
 
 	public Application() {

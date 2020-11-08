@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.sun.istack.NotNull;
 
 @Entity
 public class Customer {
@@ -13,11 +12,8 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	@NotNull
 	private String name;
-	@NotNull
 	private String contact;
-	@NotNull
 	private String email;
 	
 	private String address;

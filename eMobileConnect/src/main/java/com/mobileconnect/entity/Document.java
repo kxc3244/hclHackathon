@@ -1,19 +1,17 @@
 package com.mobileconnect.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.sun.istack.NotNull;
-
+@Entity
 public class Document {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	@NotNull
 	private String name;
-	@NotNull
 	private String uri;
 
 	public Document() {
