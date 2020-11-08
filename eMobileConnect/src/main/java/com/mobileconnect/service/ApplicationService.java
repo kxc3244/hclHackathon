@@ -4,20 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mobileconnect.entity.Customer;
-import com.mobileconnect.repository.CustomerRepository;
 
 @Service
-public class CustomerService {
+public class ApplicationService {
 
 	@Autowired
-	private CustomerRepository customerRepository;
+	private CustomerService customerService;
 	
-	public CustomerService() {
+	public ApplicationService() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public void saveCustomer(Customer customer) {
-		customerRepository.save(customer);
+		customerService.saveCustomer(customer);
 	}
 
 }
